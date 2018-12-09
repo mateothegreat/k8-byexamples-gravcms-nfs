@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: $SERVICE_NAME
+  name: $SERVICE_NAME
+spec:
+  # type: NodePort
+  ports:
+    - port: $SERVICE_PORT
+      targetPort: 80
+      name: www
+      protocol: TCP
+  selector:
+    app: $SERVICE_NAME
